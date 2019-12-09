@@ -1,16 +1,22 @@
-﻿namespace MyApplication
+﻿namespace PhoneBook
 {
-	partial class StartupForm
+	partial class MainForm
 	{
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
 		private System.ComponentModel.IContainer components = null;
 
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
 		protected override void Dispose(bool disposing)
 		{
 			if (disposing && (components != null))
 			{
 				components.Dispose();
 			}
-
 			base.Dispose(disposing);
 		}
 
@@ -24,14 +30,14 @@
 		{
 			this.SuspendLayout();
 			// 
-			// StartupForm
+			// MainForm
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(284, 261);
-			this.Name = "StartupForm";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Load += new System.EventHandler(this.StartupForm_Load);
+			this.ClientSize = new System.Drawing.Size(526, 468);
+			this.Name = "MainForm";
+			this.Text = "MainForm";
+			this.Load += new System.EventHandler(this.MainForm_Load);
 			this.ResumeLayout(false);
 
 		}

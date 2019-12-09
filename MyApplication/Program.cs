@@ -57,9 +57,9 @@ namespace MyApplication
 						IsAdmin = true,
 						IsActive = true,
 
-						Username = "Dariush",
+						Username = "PaymanN",
 						Password = "1234512345",
-						FullName = "Mr. Dariush Tasdighi"
+						FullName = "Payman Nosrati"
 					};
 
 					databaseContext.Users.Add(adminUser);
@@ -86,21 +86,21 @@ namespace MyApplication
 			// **************************************************
 
 			// **************************************************
-			//System.Windows.Forms.Application.Run(new StartupForm());
+			//System.Windows.Forms.Application.Run(new mainForm());
 
 			#region Runing Startup Form and then Disposing!
-			StartupForm startupForm = new StartupForm();
+			PhoneBook.MainForm mainForm = new PhoneBook.MainForm();
 
-			System.Windows.Forms.Application.Run(startupForm);
+			System.Windows.Forms.Application.Run(mainForm);
 
-			if (startupForm != null)
+			if (mainForm != null)
 			{
-				if (startupForm.IsDisposed == false)
+				if (mainForm.IsDisposed == false)
 				{
-					startupForm.Dispose();
+					mainForm.Dispose();
 				}
 
-				startupForm = null;
+				mainForm = null;
 			}
 			#endregion /Runing Startup Form and then Disposing!
 			// **************************************************
