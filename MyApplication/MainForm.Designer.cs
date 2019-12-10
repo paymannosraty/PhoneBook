@@ -57,7 +57,7 @@
 			this.editButton.Location = new System.Drawing.Point(99, 294);
 			this.editButton.Name = "editButton";
 			this.editButton.Size = new System.Drawing.Size(75, 23);
-			this.editButton.TabIndex = 0;
+			this.editButton.TabIndex = 1;
 			this.editButton.Text = "Edit";
 			this.editButton.UseVisualStyleBackColor = true;
 			// 
@@ -66,7 +66,7 @@
 			this.showButton.Location = new System.Drawing.Point(180, 294);
 			this.showButton.Name = "showButton";
 			this.showButton.Size = new System.Drawing.Size(75, 23);
-			this.showButton.TabIndex = 0;
+			this.showButton.TabIndex = 2;
 			this.showButton.Text = "Show";
 			this.showButton.UseVisualStyleBackColor = true;
 			// 
@@ -75,7 +75,7 @@
 			this.deleteButton.Location = new System.Drawing.Point(261, 294);
 			this.deleteButton.Name = "deleteButton";
 			this.deleteButton.Size = new System.Drawing.Size(75, 23);
-			this.deleteButton.TabIndex = 0;
+			this.deleteButton.TabIndex = 3;
 			this.deleteButton.Text = "Delete";
 			this.deleteButton.UseVisualStyleBackColor = true;
 			// 
@@ -87,7 +87,7 @@
 			this.lastNameButton.MaxLength = 20;
 			this.lastNameButton.Name = "lastNameButton";
 			this.lastNameButton.Size = new System.Drawing.Size(276, 21);
-			this.lastNameButton.TabIndex = 1;
+			this.lastNameButton.TabIndex = 0;
 			// 
 			// firstNameButton
 			// 
@@ -97,7 +97,7 @@
 			this.firstNameButton.MaxLength = 20;
 			this.firstNameButton.Name = "firstNameButton";
 			this.firstNameButton.Size = new System.Drawing.Size(282, 21);
-			this.firstNameButton.TabIndex = 2;
+			this.firstNameButton.TabIndex = 1;
 			// 
 			// groupBox1
 			// 
@@ -109,7 +109,7 @@
 			this.groupBox1.Controls.Add(this.firstNameButton);
 			this.groupBox1.Location = new System.Drawing.Point(12, 27);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(576, 261);
+			this.groupBox1.Size = new System.Drawing.Size(576, 262);
 			this.groupBox1.TabIndex = 3;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Monitor";
@@ -122,8 +122,8 @@
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView1.Location = new System.Drawing.Point(6, 47);
 			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(564, 208);
-			this.dataGridView1.TabIndex = 0;
+			this.dataGridView1.Size = new System.Drawing.Size(564, 209);
+			this.dataGridView1.TabIndex = 2;
 			// 
 			// menuStrip
 			// 
@@ -143,9 +143,10 @@
 			// 
 			// MainForm
 			// 
+			this.AcceptButton = this.editButton;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(600, 330);
+			this.ClientSize = new System.Drawing.Size(600, 331);
 			this.Controls.Add(this.menuStrip);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.deleteButton);
@@ -153,6 +154,8 @@
 			this.Controls.Add(this.editButton);
 			this.Controls.Add(this.addButton);
 			this.MainMenuStrip = this.menuStrip;
+			this.MaximumSize = new System.Drawing.Size(616, 370);
+			this.MinimumSize = new System.Drawing.Size(616, 370);
 			this.Name = "MainForm";
 			this.Text = "PhoneBook";
 			this.Load += new System.EventHandler(this.MainForm_Load);

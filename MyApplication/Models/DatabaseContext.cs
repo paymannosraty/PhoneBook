@@ -13,5 +13,7 @@
 		}
 
 		public System.Data.Entity.DbSet<User> Users { get; set; }
+
+		public System.Data.Entity.DbSet<Contact> Contacts { get; set; }
 	}
 }
