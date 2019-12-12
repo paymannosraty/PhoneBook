@@ -28,18 +28,21 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.addButton = new System.Windows.Forms.Button();
 			this.editButton = new System.Windows.Forms.Button();
 			this.showButton = new System.Windows.Forms.Button();
 			this.deleteButton = new System.Windows.Forms.Button();
-			this.lastNameButton = new System.Windows.Forms.TextBox();
-			this.firstNameButton = new System.Windows.Forms.TextBox();
+			this.lastNameTextBox = new System.Windows.Forms.TextBox();
+			this.firstNameTextBox = new System.Windows.Forms.TextBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.dataGridView = new System.Windows.Forms.DataGridView();
+			this.contactBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.menuStrip = new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.groupBox1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).BeginInit();
 			this.menuStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -48,7 +51,7 @@
 			this.addButton.Location = new System.Drawing.Point(18, 294);
 			this.addButton.Name = "addButton";
 			this.addButton.Size = new System.Drawing.Size(75, 23);
-			this.addButton.TabIndex = 0;
+			this.addButton.TabIndex = 1;
 			this.addButton.Text = "Add";
 			this.addButton.UseVisualStyleBackColor = true;
 			// 
@@ -57,7 +60,7 @@
 			this.editButton.Location = new System.Drawing.Point(99, 294);
 			this.editButton.Name = "editButton";
 			this.editButton.Size = new System.Drawing.Size(75, 23);
-			this.editButton.TabIndex = 1;
+			this.editButton.TabIndex = 2;
 			this.editButton.Text = "Edit";
 			this.editButton.UseVisualStyleBackColor = true;
 			// 
@@ -66,7 +69,7 @@
 			this.showButton.Location = new System.Drawing.Point(180, 294);
 			this.showButton.Name = "showButton";
 			this.showButton.Size = new System.Drawing.Size(75, 23);
-			this.showButton.TabIndex = 2;
+			this.showButton.TabIndex = 3;
 			this.showButton.Text = "Show";
 			this.showButton.UseVisualStyleBackColor = true;
 			// 
@@ -75,55 +78,58 @@
 			this.deleteButton.Location = new System.Drawing.Point(261, 294);
 			this.deleteButton.Name = "deleteButton";
 			this.deleteButton.Size = new System.Drawing.Size(75, 23);
-			this.deleteButton.TabIndex = 3;
+			this.deleteButton.TabIndex = 4;
 			this.deleteButton.Text = "Delete";
 			this.deleteButton.UseVisualStyleBackColor = true;
 			// 
-			// lastNameButton
+			// lastNameTextBox
 			// 
-			this.lastNameButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+			this.lastNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.lastNameTextBox.Location = new System.Drawing.Point(6, 20);
+			this.lastNameTextBox.MaxLength = 20;
+			this.lastNameTextBox.Name = "lastNameTextBox";
+			this.lastNameTextBox.Size = new System.Drawing.Size(318, 21);
+			this.lastNameTextBox.TabIndex = 0;
+			this.lastNameTextBox.TextChanged += new System.EventHandler(this.lastNameTextBox_TextChanged);
+			// 
+			// firstNameTextBox
+			// 
+			this.firstNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.lastNameButton.Location = new System.Drawing.Point(6, 20);
-			this.lastNameButton.MaxLength = 20;
-			this.lastNameButton.Name = "lastNameButton";
-			this.lastNameButton.Size = new System.Drawing.Size(276, 21);
-			this.lastNameButton.TabIndex = 0;
-			// 
-			// firstNameButton
-			// 
-			this.firstNameButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.firstNameButton.Location = new System.Drawing.Point(288, 20);
-			this.firstNameButton.MaxLength = 20;
-			this.firstNameButton.Name = "firstNameButton";
-			this.firstNameButton.Size = new System.Drawing.Size(282, 21);
-			this.firstNameButton.TabIndex = 1;
+			this.firstNameTextBox.Location = new System.Drawing.Point(327, 20);
+			this.firstNameTextBox.MaxLength = 20;
+			this.firstNameTextBox.Name = "firstNameTextBox";
+			this.firstNameTextBox.Size = new System.Drawing.Size(318, 21);
+			this.firstNameTextBox.TabIndex = 1;
+			this.firstNameTextBox.TextChanged += new System.EventHandler(this.firstNameTextBox_TextChanged);
 			// 
 			// groupBox1
 			// 
 			this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.groupBox1.Controls.Add(this.dataGridView1);
-			this.groupBox1.Controls.Add(this.lastNameButton);
-			this.groupBox1.Controls.Add(this.firstNameButton);
+			this.groupBox1.Controls.Add(this.dataGridView);
+			this.groupBox1.Controls.Add(this.lastNameTextBox);
+			this.groupBox1.Controls.Add(this.firstNameTextBox);
 			this.groupBox1.Location = new System.Drawing.Point(12, 27);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(576, 262);
-			this.groupBox1.TabIndex = 3;
+			this.groupBox1.Size = new System.Drawing.Size(651, 262);
+			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Monitor";
 			// 
-			// dataGridView1
+			// dataGridView
 			// 
-			this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Location = new System.Drawing.Point(6, 47);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(564, 209);
-			this.dataGridView1.TabIndex = 2;
+			this.dataGridView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+			this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView.Location = new System.Drawing.Point(6, 47);
+			this.dataGridView.Name = "dataGridView";
+			this.dataGridView.Size = new System.Drawing.Size(639, 209);
+			this.dataGridView.TabIndex = 2;
+			// 
+			// contactBindingSource
+			// 
+			this.contactBindingSource.DataSource = typeof(Models.Contact);
 			// 
 			// menuStrip
 			// 
@@ -131,7 +137,7 @@
             this.fileToolStripMenuItem});
 			this.menuStrip.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip.Name = "menuStrip";
-			this.menuStrip.Size = new System.Drawing.Size(600, 24);
+			this.menuStrip.Size = new System.Drawing.Size(675, 24);
 			this.menuStrip.TabIndex = 5;
 			this.menuStrip.Text = "menuStrip1";
 			// 
@@ -146,7 +152,7 @@
 			this.AcceptButton = this.editButton;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(600, 331);
+			this.ClientSize = new System.Drawing.Size(675, 331);
 			this.Controls.Add(this.menuStrip);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.deleteButton);
@@ -154,14 +160,15 @@
 			this.Controls.Add(this.editButton);
 			this.Controls.Add(this.addButton);
 			this.MainMenuStrip = this.menuStrip;
-			this.MaximumSize = new System.Drawing.Size(616, 370);
+			this.MaximumSize = new System.Drawing.Size(1000, 370);
 			this.MinimumSize = new System.Drawing.Size(616, 370);
 			this.Name = "MainForm";
 			this.Text = "PhoneBook";
 			this.Load += new System.EventHandler(this.MainForm_Load);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).EndInit();
 			this.menuStrip.ResumeLayout(false);
 			this.menuStrip.PerformLayout();
 			this.ResumeLayout(false);
@@ -175,11 +182,12 @@
 		private System.Windows.Forms.Button editButton;
 		private System.Windows.Forms.Button showButton;
 		private System.Windows.Forms.Button deleteButton;
-		private System.Windows.Forms.TextBox lastNameButton;
-		private System.Windows.Forms.TextBox firstNameButton;
+		private System.Windows.Forms.TextBox lastNameTextBox;
+		private System.Windows.Forms.TextBox firstNameTextBox;
 		private System.Windows.Forms.GroupBox groupBox1;
-		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.DataGridView dataGridView;
 		private System.Windows.Forms.MenuStrip menuStrip;
 		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+		private System.Windows.Forms.BindingSource contactBindingSource;
 	}
 }
