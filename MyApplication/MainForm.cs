@@ -18,6 +18,7 @@ namespace PhoneBook
 			dataGridView.Columns["mobilenumber"].HeaderText = "شماره موبایل ";
 			dataGridView.Columns["address"].HeaderText = "آدرس ";
 			dataGridView.Columns["id"].Visible = false;
+			
 
 
 		}

@@ -120,7 +120,13 @@
 			// 
 			// dataGridView
 			// 
+			this.dataGridView.AllowUserToAddRows = false;
+			this.dataGridView.AllowUserToDeleteRows = false;
+			this.dataGridView.AllowUserToResizeRows = false;
+			this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dataGridView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+			this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
 			this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView.Location = new System.Drawing.Point(6, 47);
 			this.dataGridView.Name = "dataGridView";
@@ -160,7 +166,7 @@
 			this.Controls.Add(this.editButton);
 			this.Controls.Add(this.addButton);
 			this.MainMenuStrip = this.menuStrip;
-			this.MaximumSize = new System.Drawing.Size(1000, 370);
+			this.MaximumSize = new System.Drawing.Size(691, 370);
 			this.MinimumSize = new System.Drawing.Size(616, 370);
 			this.Name = "MainForm";
 			this.Text = "PhoneBook";
