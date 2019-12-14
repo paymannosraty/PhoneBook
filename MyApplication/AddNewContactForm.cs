@@ -31,13 +31,14 @@ namespace PhoneBook
 
 				databaseContext.SaveChanges();
 
-				System.Windows.Forms.MessageBox.Show($"{ firstNameTextEdit.Text } { lastNameTextEdit.Text } با موفقیت اضافه شد!",
+				System.Windows.Forms.MessageBox.Show($"!{ firstNameTextEdit.Text } { lastNameTextEdit.Text } با موفقیت اضافه شد",
 					caption: "",
 					buttons: System.Windows.Forms.MessageBoxButtons.OK,
 					icon: System.Windows.Forms.MessageBoxIcon.Asterisk
 					);
 
 				Reset();
+				
 			}
 
 			catch (System.Exception ex)

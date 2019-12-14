@@ -24,6 +24,17 @@ namespace PhoneBook
 		void windowsUIButtonPanel_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
 		{
 			if (e.Button.Properties.Caption == "Print") gridControl.ShowRibbonPrintPreview();
+
+			if (e.Button.Properties.Caption == "New")
+			{
+				Infrastructure.Utility.AddNewContactForm.ShowDialog();
+			}
+
+			if (e.Button.Properties.Caption == "Refresh")
+			{
+				SearchContact();
+			}
+
 		}
 	
 		public void SearchContact()

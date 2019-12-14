@@ -8,6 +8,20 @@ namespace Infrastructure
 		}
 
 		public static Models.User AuthenticatedUser { get; set; }
-		
+
+		private static PhoneBook.AddNewContactForm addNewContactForm;
+		public static PhoneBook.AddNewContactForm AddNewContactForm
+		{
+			get
+			{
+				if ((addNewContactForm == null) || (addNewContactForm.IsDisposed))
+				{
+					addNewContactForm =
+						new PhoneBook.AddNewContactForm();
+				}
+				return addNewContactForm;
+			}
+		}
+
 	}
 }
