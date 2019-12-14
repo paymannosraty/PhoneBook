@@ -89,20 +89,7 @@ namespace MyApplication
 			//System.Windows.Forms.Application.Run(new mainForm());
 
 			#region Runing Startup Form and then Disposing!
-			//PhoneBook.MainForm mainForm = new PhoneBook.MainForm();
-
-			//System.Windows.Forms.Application.Run(mainForm);
-
-			//if (mainForm != null)
-			//{
-			//	if (mainForm.IsDisposed == false)
-			//	{
-			//		mainForm.Dispose();
-			//	}
-
-			//	mainForm = null;
-			//}
-			PhoneBook.MainForm2 mainForm = new PhoneBook.MainForm2();
+			PhoneBook.AddNewContactForm mainForm = new PhoneBook.AddNewContactForm();
 
 			System.Windows.Forms.Application.Run(mainForm);
 
@@ -115,6 +102,19 @@ namespace MyApplication
 
 				mainForm = null;
 			}
+			/*PhoneBook.MainForm2 mainForm = new PhoneBook.MainForm2();
+
+			System.Windows.Forms.Application.Run(mainForm);
+
+			if (mainForm != null)
+			{
+				if (mainForm.IsDisposed == false)
+				{
+					mainForm.Dispose();
+				}
+
+				mainForm = null;
+			}*/
 			#endregion /Runing Startup Form and then Disposing!
 			// **************************************************
 		}

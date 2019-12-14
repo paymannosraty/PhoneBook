@@ -29,18 +29,18 @@
 		///
 		private void InitializeComponent()
 		{
-			DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions6 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-			DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions7 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-			DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions8 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-			DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions9 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-			DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions10 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+			DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions11 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+			DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions12 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+			DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions13 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+			DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions14 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+			DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions15 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
 			this.layoutControl = new DevExpress.XtraLayout.LayoutControl();
 			this.labelControl = new DevExpress.XtraEditors.LabelControl();
 			this.gridControl = new DevExpress.XtraGrid.GridControl();
+			this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
 			this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
 			this.bandedGridView1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
 			this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-			this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
 			this.layoutView1 = new DevExpress.XtraGrid.Views.Layout.LayoutView();
 			this.layoutViewCard1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewCard();
 			this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -56,9 +56,9 @@
 			((System.ComponentModel.ISupportInitialize)(this.layoutControl)).BeginInit();
 			this.layoutControl.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.bandedGridView1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
@@ -107,12 +107,28 @@
 			this.gridControl.Size = new System.Drawing.Size(704, 442);
 			this.gridControl.TabIndex = 2;
 			this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView,
             this.gridView1,
             this.bandedGridView1,
-            this.gridView,
             this.layoutView1,
             this.gridView2,
             this.gridView3});
+			// 
+			// gridView
+			// 
+			this.gridView.GridControl = this.gridControl;
+			this.gridView.Name = "gridView";
+			this.gridView.OptionsBehavior.Editable = false;
+			this.gridView.OptionsCustomization.AllowColumnMoving = false;
+			this.gridView.OptionsCustomization.AllowGroup = false;
+			this.gridView.OptionsCustomization.AllowQuickHideColumns = false;
+			this.gridView.OptionsMenu.EnableColumnMenu = false;
+			this.gridView.OptionsSelection.EnableAppearanceFocusedCell = false;
+			this.gridView.OptionsSelection.MultiSelect = true;
+			this.gridView.OptionsView.ShowAutoFilterRow = true;
+			this.gridView.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
+			this.gridView.OptionsView.ShowGroupPanel = false;
+			this.gridView.OptionsView.ShowIndicator = false;
 			// 
 			// gridView1
 			// 
@@ -137,21 +153,6 @@
 			this.gridBand1.Caption = "gridBand1";
 			this.gridBand1.Name = "gridBand1";
 			this.gridBand1.VisibleIndex = 0;
-			// 
-			// gridView
-			// 
-			this.gridView.GridControl = this.gridControl;
-			this.gridView.Name = "gridView";
-			this.gridView.OptionsBehavior.Editable = false;
-			this.gridView.OptionsCustomization.AllowColumnMoving = false;
-			this.gridView.OptionsCustomization.AllowGroup = false;
-			this.gridView.OptionsCustomization.AllowQuickHideColumns = false;
-			this.gridView.OptionsMenu.EnableColumnMenu = false;
-			this.gridView.OptionsSelection.EnableAppearanceFocusedCell = false;
-			this.gridView.OptionsView.ShowAutoFilterRow = true;
-			this.gridView.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
-			this.gridView.OptionsView.ShowGroupPanel = false;
-			this.gridView.OptionsView.ShowIndicator = false;
 			// 
 			// layoutView1
 			// 
@@ -254,18 +255,18 @@
 			this.windowsUIButtonPanel.AppearanceButton.Pressed.Options.UseFont = true;
 			this.windowsUIButtonPanel.AppearanceButton.Pressed.Options.UseForeColor = true;
 			this.windowsUIButtonPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-			windowsUIButtonImageOptions6.ImageUri.Uri = "New;Size32x32;GrayScaled";
-			windowsUIButtonImageOptions7.ImageUri.Uri = "Edit;Size32x32;GrayScaled";
-			windowsUIButtonImageOptions8.ImageUri.Uri = "Edit/Delete;Size32x32;GrayScaled";
-			windowsUIButtonImageOptions9.ImageUri.Uri = "Refresh;Size32x32;GrayScaled";
-			windowsUIButtonImageOptions10.ImageUri.Uri = "Preview;Size32x32;GrayScaled";
+			windowsUIButtonImageOptions11.ImageUri.Uri = "New;Size32x32;GrayScaled";
+			windowsUIButtonImageOptions12.ImageUri.Uri = "Edit;Size32x32;GrayScaled";
+			windowsUIButtonImageOptions13.ImageUri.Uri = "Edit/Delete;Size32x32;GrayScaled";
+			windowsUIButtonImageOptions14.ImageUri.Uri = "Refresh;Size32x32;GrayScaled";
+			windowsUIButtonImageOptions15.ImageUri.Uri = "Preview;Size32x32;GrayScaled";
 			this.windowsUIButtonPanel.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("New", true, windowsUIButtonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Edit", true, windowsUIButtonImageOptions7, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Delete", true, windowsUIButtonImageOptions8, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Refresh", true, windowsUIButtonImageOptions9, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("New", true, windowsUIButtonImageOptions11, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Edit", true, windowsUIButtonImageOptions12, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Delete", true, windowsUIButtonImageOptions13, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Refresh", true, windowsUIButtonImageOptions14, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Print", true, windowsUIButtonImageOptions10, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Print", true, windowsUIButtonImageOptions15, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
 			this.windowsUIButtonPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.windowsUIButtonPanel.EnableImageTransparency = true;
 			this.windowsUIButtonPanel.ForeColor = System.Drawing.Color.White;
@@ -294,9 +295,9 @@
 			((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();
 			this.layoutControl.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.bandedGridView1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutView1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();

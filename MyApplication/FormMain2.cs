@@ -64,6 +64,7 @@ namespace PhoneBook
 			gridView.Columns[3].Caption = "شماره موبایل ";
 			gridView.Columns[4].Caption = "آدرس ";
 			gridView.Columns[5].Visible = false;
+			gridView.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
 
 		}
 	}
