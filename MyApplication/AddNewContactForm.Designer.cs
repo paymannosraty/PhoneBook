@@ -41,6 +41,7 @@
 			this.lastNameTextEdit = new DevExpress.XtraEditors.TextEdit();
 			this.firstNameTextEdit = new DevExpress.XtraEditors.TextEdit();
 			this.addressRichText = new DevExpress.XtraEditors.MemoEdit();
+			this.editButton = new DevExpress.XtraEditors.SimpleButton();
 			this.addGroupBox.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.mobileTextEdit.Properties)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.phoneNumberTextEdit.Properties)).BeginInit();
@@ -61,7 +62,7 @@
 			// cancelButton
 			// 
 			this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			this.cancelButton.Location = new System.Drawing.Point(131, 256);
+			this.cancelButton.Location = new System.Drawing.Point(250, 256);
 			this.cancelButton.Name = "cancelButton";
 			this.cancelButton.Size = new System.Drawing.Size(113, 23);
 			this.cancelButton.TabIndex = 2;
@@ -167,6 +168,15 @@
 			this.addressRichText.Size = new System.Drawing.Size(380, 72);
 			this.addressRichText.TabIndex = 4;
 			// 
+			// editButton
+			// 
+			this.editButton.Location = new System.Drawing.Point(131, 256);
+			this.editButton.Name = "editButton";
+			this.editButton.Size = new System.Drawing.Size(113, 23);
+			this.editButton.TabIndex = 1;
+			this.editButton.Text = "اصلاح کن";
+			this.editButton.Click += new System.EventHandler(this.EditButton_Click);
+			// 
 			// AddNewContactForm
 			// 
 			this.AcceptButton = this.addButton;
@@ -176,6 +186,7 @@
 			this.ClientSize = new System.Drawing.Size(500, 308);
 			this.Controls.Add(this.addGroupBox);
 			this.Controls.Add(this.cancelButton);
+			this.Controls.Add(this.editButton);
 			this.Controls.Add(this.addButton);
 			this.MaximumSize = new System.Drawing.Size(510, 340);
 			this.MinimumSize = new System.Drawing.Size(510, 340);
@@ -183,6 +194,7 @@
 			this.RightToLeftLayout = true;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Add New Contact";
+			this.Load += new System.EventHandler(this.AddNewContactForm_Load);
 			this.addGroupBox.ResumeLayout(false);
 			this.addGroupBox.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.mobileTextEdit.Properties)).EndInit();
@@ -195,7 +207,7 @@
 		}
 
 		#endregion
-		private DevExpress.XtraEditors.SimpleButton addButton;
+		public DevExpress.XtraEditors.SimpleButton addButton;
 		private DevExpress.XtraEditors.SimpleButton cancelButton;
 		private System.Windows.Forms.GroupBox addGroupBox;
 		private DevExpress.XtraEditors.LabelControl addressLabel;
@@ -208,5 +220,6 @@
 		private DevExpress.XtraEditors.TextEdit lastNameTextEdit;
 		private DevExpress.XtraEditors.TextEdit firstNameTextEdit;
 		private DevExpress.XtraEditors.MemoEdit addressRichText;
+		public DevExpress.XtraEditors.SimpleButton editButton;
 	}
 }

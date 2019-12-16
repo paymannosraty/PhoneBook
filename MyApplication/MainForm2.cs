@@ -1,20 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
-using System.ComponentModel.DataAnnotations;
-using DevExpress.XtraBars;
-using System.Data.Entity;
+﻿using System.Linq;
 
 namespace PhoneBook
 {
-	public partial class MainForm2 : XtraForm
+	public partial class MainForm2 : DevExpress.XtraEditors.XtraForm
 	{
 		public MainForm2()
 		{
@@ -27,17 +15,87 @@ namespace PhoneBook
 
 			if (e.Button.Properties.Caption == "New")
 			{
+				Infrastructure.Utility.AddNewContactForm.addButton.Enabled = true;
+				Infrastructure.Utility.AddNewContactForm.editButton.Enabled = false;
+
 				Infrastructure.Utility.AddNewContactForm.ShowDialog();
 			}
 
 			if (e.Button.Properties.Caption == "Refresh")
 			{
 				SearchContact();
+				DevExpress.XtraEditors.XtraMessageBox.Show("به روز رسانی انجام شد");
 			}
 
+			if (e.Button.Properties.Caption == "Edit")
+			{
+				if (gridView.SelectedRowsCount != 1)
+				{
+					DevExpress.XtraEditors.XtraMessageBox.Show("برای اصلاح فقط یک آیتم را انتخاب کنید");
+					return;
+				}
+				
+				// first get selected rows indexes to var and then cast it to model
+				int[] selectedRows = gridView.GetSelectedRows();
+
+				Models.Contact selectedContact =
+					gridView.GetRow(selectedRows[0]) as Models.Contact;
+
+				if (selectedContact != null)
+				{
+					Infrastructure.Utility.AddNewContactForm.SelectedContact = selectedContact;
+
+					Infrastructure.Utility.AddNewContactForm.addButton.Enabled = false;
+					Infrastructure.Utility.AddNewContactForm.editButton.Enabled = true;
+
+					Infrastructure.Utility.AddNewContactForm.ShowDialog();
+
+				}
+			}
+			if (e.Button.Properties.Caption == "Delete")
+			{
+				if (gridView.SelectedRowsCount == 0)
+				{
+					DevExpress.XtraEditors.XtraMessageBox.Show("برای حذف حداقل یک آیتم را انتخاب کنید");
+					return;
+				}
+
+				int[] selectedRows = gridView.GetSelectedRows();
+
+				Models.Contact selectedContact =
+					gridView.GetRow(selectedRows[0]) as Models.Contact;
+
+				if (selectedContact != null)
+				{
+					Models.DatabaseContext databaseContext = null;
+					try
+					{
+						databaseContext = new Models.DatabaseContext();
+						Models.Contact contact = databaseContext.Contacts
+							.Where(current => current.Id == selectedContact.Id)
+							.FirstOrDefault();
+
+						databaseContext.Contacts.Remove(contact);
+
+						databaseContext.SaveChanges();
+					}
+					catch (System.Exception ex)
+					{
+						DevExpress.XtraEditors.XtraMessageBox.Show(ex.Message.ToString());
+					}
+					finally
+					{
+						if (databaseContext != null)
+						{
+							databaseContext.Dispose();
+							databaseContext = null;
+						}
+					}
+				}
+			}
 		}
-	
-		public void SearchContact()
+
+		public void SearchContact() // add in utility
 		{
 			Models.DatabaseContext databaseContext = null;
 
@@ -52,9 +110,9 @@ namespace PhoneBook
 				gridControl.DataSource = contacts;
 
 			}
-			catch (System.Exception)
+			catch (System.Exception ex)
 			{
-				System.Windows.Forms.MessageBox.Show("Some Error Accured");
+				DevExpress.XtraEditors.XtraMessageBox.Show(ex.ToString());
 			}
 			finally
 			{
@@ -66,7 +124,7 @@ namespace PhoneBook
 			}
 		}
 
-		private void MainForm2_Load(object sender, EventArgs e)
+		private void MainForm2_Load(object sender, System.EventArgs e)
 		{
 			SearchContact();
 			gridView.Columns[0].Caption = "نام ";
@@ -75,8 +133,6 @@ namespace PhoneBook
 			gridView.Columns[3].Caption = "شماره موبایل ";
 			gridView.Columns[4].Caption = "آدرس ";
 			gridView.Columns[5].Visible = false;
-			gridView.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
-
 		}
 	}
 }

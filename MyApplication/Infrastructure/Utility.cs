@@ -9,6 +9,8 @@ namespace Infrastructure
 
 		public static Models.User AuthenticatedUser { get; set; }
 
+		public static Models.Contact AuthenticatedContact { get; set; }
+
 		private static PhoneBook.AddNewContactForm addNewContactForm;
 		public static PhoneBook.AddNewContactForm AddNewContactForm
 		{
