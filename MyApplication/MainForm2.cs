@@ -58,6 +58,12 @@ namespace PhoneBook
 			}
 			if (e.Button.Properties.Caption == "حذف")
 			{
+				if (gridView.SelectedRowsCount == 0)
+				{
+					DevExpress.XtraEditors.XtraMessageBox.Show("برای حذف حداقل یک آیتم را انتخاب کنید");
+					return;
+				}
+
 				System.Windows.Forms.DialogResult dialogResult =
 					DevExpress.XtraEditors.XtraMessageBox.Show("آیا از حذف آیتم های مورد نظر اطمینان دارید؟",
 					caption: "اخطار",
@@ -67,11 +73,6 @@ namespace PhoneBook
 
 				if (dialogResult == System.Windows.Forms.DialogResult.No)
 				{
-					return;
-				}
-				if (gridView.SelectedRowsCount == 0)
-				{
-					DevExpress.XtraEditors.XtraMessageBox.Show("برای حذف حداقل یک آیتم را انتخاب کنید");
 					return;
 				}
 
@@ -112,7 +113,7 @@ namespace PhoneBook
 			}
 		}
 
-		public void SearchContact() // add in utility
+		public void SearchContact() 
 		{
 			Models.DatabaseContext databaseContext = null;
 
