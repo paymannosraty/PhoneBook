@@ -11,23 +11,25 @@ namespace PhoneBook
 
 		void windowsUIButtonPanel_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
 		{
-			if (e.Button.Properties.Caption == "Print") gridControl.ShowRibbonPrintPreview();
+			if (e.Button.Properties.Caption == "چاپ") gridControl.ShowRibbonPrintPreview();
 
-			if (e.Button.Properties.Caption == "New")
+			if (e.Button.Properties.Caption == "جدید")
 			{
 				Infrastructure.Utility.AddNewContactForm.addButton.Enabled = true;
 				Infrastructure.Utility.AddNewContactForm.editButton.Enabled = false;
 
 				Infrastructure.Utility.AddNewContactForm.ShowDialog();
+
+				SearchContact();
 			}
 
-			if (e.Button.Properties.Caption == "Refresh")
+			if (e.Button.Properties.Caption == "بروزرسانی")
 			{
 				SearchContact();
 				DevExpress.XtraEditors.XtraMessageBox.Show("به روز رسانی انجام شد");
 			}
 
-			if (e.Button.Properties.Caption == "Edit")
+			if (e.Button.Properties.Caption == "اصلاح")
 			{
 				if (gridView.SelectedRowsCount != 1)
 				{
@@ -50,10 +52,23 @@ namespace PhoneBook
 
 					Infrastructure.Utility.AddNewContactForm.ShowDialog();
 
+					SearchContact();
+
 				}
 			}
-			if (e.Button.Properties.Caption == "Delete")
+			if (e.Button.Properties.Caption == "حذف")
 			{
+				System.Windows.Forms.DialogResult dialogResult =
+					DevExpress.XtraEditors.XtraMessageBox.Show("آیا از حذف آیتم های مورد نظر اطمینان دارید؟",
+					caption: "اخطار",
+					buttons: System.Windows.Forms.MessageBoxButtons.YesNo,
+					icon: System.Windows.Forms.MessageBoxIcon.Warning
+					);
+
+				if (dialogResult == System.Windows.Forms.DialogResult.No)
+				{
+					return;
+				}
 				if (gridView.SelectedRowsCount == 0)
 				{
 					DevExpress.XtraEditors.XtraMessageBox.Show("برای حذف حداقل یک آیتم را انتخاب کنید");
@@ -78,6 +93,8 @@ namespace PhoneBook
 						databaseContext.Contacts.Remove(contact);
 
 						databaseContext.SaveChanges();
+
+						SearchContact();
 					}
 					catch (System.Exception ex)
 					{

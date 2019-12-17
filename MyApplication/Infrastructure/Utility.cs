@@ -11,15 +11,15 @@ namespace Infrastructure
 
 		public static Models.Contact AuthenticatedContact { get; set; }
 
-		private static PhoneBook.AddNewContactForm addNewContactForm;
-		public static PhoneBook.AddNewContactForm AddNewContactForm
+		private static PhoneBook.AddOrEditContactForm addNewContactForm;
+		public static PhoneBook.AddOrEditContactForm AddNewContactForm
 		{
 			get
 			{
 				if ((addNewContactForm == null) || (addNewContactForm.IsDisposed))
 				{
 					addNewContactForm =
-						new PhoneBook.AddNewContactForm();
+						new PhoneBook.AddOrEditContactForm();
 				}
 				return addNewContactForm;
 			}

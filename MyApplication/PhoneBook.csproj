@@ -96,11 +96,11 @@
     <Compile Include="MainForm2.Designer.cs">
       <DependentUpon>MainForm2.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddNewContactForm.cs">
+    <Compile Include="AddOrEditContactForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddNewContactForm.Designer.cs">
-      <DependentUpon>AddNewContactForm.cs</DependentUpon>
+    <Compile Include="AddOrEditContactForm.Designer.cs">
+      <DependentUpon>AddOrEditContactForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="MainForm2.resx">
       <DependentUpon>MainForm2.cs</DependentUpon>
@@ -122,8 +122,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="AddNewContactForm.resx">
-      <DependentUpon>AddNewContactForm.cs</DependentUpon>
+    <EmbeddedResource Include="AddOrEditContactForm.resx">
+      <DependentUpon>AddOrEditContactForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Models.Contact.datasource" />

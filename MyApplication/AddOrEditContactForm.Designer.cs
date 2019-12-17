@@ -1,6 +1,6 @@
 ﻿namespace PhoneBook
 {
-	partial class AddNewContactForm
+	partial class AddOrEditContactForm
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -94,7 +94,7 @@
 			this.addressLabel.Name = "addressLabel";
 			this.addressLabel.Size = new System.Drawing.Size(25, 13);
 			this.addressLabel.TabIndex = 9;
-			this.addressLabel.Text = "آدرس";
+			this.addressLabel.Text = "&آدرس";
 			// 
 			// mobileLabel
 			// 
@@ -102,7 +102,7 @@
 			this.mobileLabel.Name = "mobileLabel";
 			this.mobileLabel.Size = new System.Drawing.Size(61, 13);
 			this.mobileLabel.TabIndex = 8;
-			this.mobileLabel.Text = "شماره موبایل";
+			this.mobileLabel.Text = "&شماره موبایل";
 			// 
 			// phoneLabel
 			// 
@@ -110,7 +110,7 @@
 			this.phoneLabel.Name = "phoneLabel";
 			this.phoneLabel.Size = new System.Drawing.Size(52, 13);
 			this.phoneLabel.TabIndex = 7;
-			this.phoneLabel.Text = "شماره ثابت";
+			this.phoneLabel.Text = "&شماره ثابت";
 			// 
 			// lastNameLabel
 			// 
@@ -118,7 +118,7 @@
 			this.lastNameLabel.Name = "lastNameLabel";
 			this.lastNameLabel.Size = new System.Drawing.Size(58, 13);
 			this.lastNameLabel.TabIndex = 6;
-			this.lastNameLabel.Text = "نام خانوادگی";
+			this.lastNameLabel.Text = "&نام خانوادگی";
 			// 
 			// firstNameLabel
 			// 
@@ -126,7 +126,7 @@
 			this.firstNameLabel.Name = "firstNameLabel";
 			this.firstNameLabel.Size = new System.Drawing.Size(13, 13);
 			this.firstNameLabel.TabIndex = 5;
-			this.firstNameLabel.Text = "نام";
+			this.firstNameLabel.Text = "&نام";
 			// 
 			// mobileTextEdit
 			// 
@@ -177,7 +177,7 @@
 			this.editButton.Text = "اصلاح کن";
 			this.editButton.Click += new System.EventHandler(this.EditButton_Click);
 			// 
-			// AddNewContactForm
+			// AddOrEditContactForm
 			// 
 			this.AcceptButton = this.addButton;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -190,10 +190,10 @@
 			this.Controls.Add(this.addButton);
 			this.MaximumSize = new System.Drawing.Size(510, 340);
 			this.MinimumSize = new System.Drawing.Size(510, 340);
-			this.Name = "AddNewContactForm";
+			this.Name = "AddOrEditContactForm";
 			this.RightToLeftLayout = true;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Add New Contact";
+			this.Text = "درج و اصلاح مخاطب";
 			this.Load += new System.EventHandler(this.AddNewContactForm_Load);
 			this.addGroupBox.ResumeLayout(false);
 			this.addGroupBox.PerformLayout();
